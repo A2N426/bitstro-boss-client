@@ -7,10 +7,11 @@ import { FiMenu } from 'react-icons/fi';
 import { AiFillShopping } from 'react-icons/ai';
 import { BiMessageRoundedDetail } from 'react-icons/bi';
 import useCart from "../hooks/useCart";
+import useAdmin from "../hooks/useAdmin";
 
 const Dashboard = () => {
     const [cart] = useCart()
-    const isAdmin = true;
+    const [isAdmin]=useAdmin();
     return (
         <div className="drawer drawer-mobile">
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
