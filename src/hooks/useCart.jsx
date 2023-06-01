@@ -12,7 +12,7 @@ const useCart = () => {
         enabled:!loading,
         queryFn: async () => {
             const res = await axiosSecure(`/carts?email=${user?.email}`)
-            console.log("from axios compo", res)
+            console.log("from axios hook", res)
             return res.data;
         },
     })
