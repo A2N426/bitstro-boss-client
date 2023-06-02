@@ -2,10 +2,11 @@ import { Helmet } from "react-helmet-async";
 import useCart from "../../../hooks/useCart";
 import { BsFillTrash3Fill } from 'react-icons/bs';
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 
 const MyCart = () => {
-    const [cart,refetch] = useCart();
+    const [cart, refetch] = useCart();
 
     const total = cart.reduce((sum, item) => (item.price + sum), 0);
 
@@ -26,7 +27,7 @@ const MyCart = () => {
                     .then(res => res.json())
                     .then(data => {
                         if (data.deletedCount > 0) {
-                        refetch()
+                            refetch()
                             Swal.fire(
                                 'Deleted!',
                                 'Your file has been deleted.',
@@ -45,7 +46,9 @@ const MyCart = () => {
             <div className="uppercase flex justify-evenly items-center h-[60px] font-semibold">
                 <h3 className="text-2xl">Total Item: {cart.length}</h3>
                 <h3 className="text-2xl">Total Price: ${(total)}</h3>
-                <button className="btn btn-warning btn-sm">Pay</button>
+                <Link to="/dashboard/payment">
+                    <button className="btn btn-warning btn-sm">Pay</button>
+                </Link>
             </div>
             <div>
                 <div className="overflow-x-auto w-full">
@@ -76,7 +79,7 @@ const MyCart = () => {
                                     </td>
                                     <td className="text-end">${item.price}</td>
                                     <td>
-                                        <button onClick={()=>handleDelete(item)} className="btn btn-error bg-red-600 text-white text-2xl"><BsFillTrash3Fill /></button>
+                                        <button onClick={() => handleDelete(item)} className="btn btn-error bg-red-600 text-white text-2xl"><BsFillTrash3Fill /></button>
                                     </td>
                                 </tr>)
                             }
