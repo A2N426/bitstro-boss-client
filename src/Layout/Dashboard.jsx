@@ -28,7 +28,7 @@ const Dashboard = () => {
                 <ul className="menu text-xl p-4 w-80 font-semibold">
                     {
                         isAdmin ? <>
-                            <li><NavLink to="/dashboard/home"><FaHome /> Admin HOME</NavLink></li>
+                            <li><NavLink to="/dashboard/adminHome"><FaHome /> ADMIN HOME</NavLink></li>
                             <li><NavLink to="/dashboard/AddItem"><FaUtensils/> Add ITEMS</NavLink></li>
                             <li><NavLink to="/dashboard/mangeItems"><GiWallet /> MANAGE ITEMS</NavLink></li>
                             <li><NavLink to="/dashboard/mycart"><BsFillCartFill /> MANAGE BOOKINGS <span className="badge badge-secondary">+{cart?.length || 0}</span></NavLink></li>
@@ -36,7 +36,7 @@ const Dashboard = () => {
                         </>
                             :
                             <>
-                                <li><NavLink to="/dashboard/home"><FaHome /> USER HOME</NavLink></li>
+                                <li><NavLink to="/dashboard/userHome"><FaHome /> USER HOME</NavLink></li>
                                 <li><NavLink to="/dashboard/reservations"><FaCalendarAlt /> RESERVATIONS</NavLink></li>
                                 <li><NavLink to="/dashboard/history"><GiWallet /> PAYMENT HISTORY</NavLink></li>
                                 <li><NavLink to="/dashboard/mycart"><BsFillCartFill /> MY CART <span className="badge badge-secondary">+{cart?.length || 0}</span></NavLink></li>
