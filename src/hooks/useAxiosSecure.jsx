@@ -4,7 +4,7 @@ import useAuth from './useAuth';
 import { useEffect } from 'react';
 
 const axiosSecure = axios.create({
-    baseURL: 'http://localhost:5000',
+    baseURL: 'https://bistro-boss-server-coral.vercel.app',
 });
 const useAxiosSecure = () => {
     const { logOut } = useAuth();
